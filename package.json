@@ -1,0 +1,34 @@
+{
+  "name": "fcntl",
+  "version": "0.0.1",
+  "description": "fcntl wrapper for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scality/node-fcntl.git"
+  },
+  "keywords": [
+    "fcntl",
+    "nodejs"
+  ],
+  "author": "vrancurel",
+  "license": "Apache-2.0",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/scality/node-fcntl/issues"
+  },
+  "homepage": "https://github.com/scality/node-fcntl#readme",
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "^1.1.1",
+    "nan": "^2.3.2"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
