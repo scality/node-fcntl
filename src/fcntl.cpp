@@ -6,6 +6,10 @@ using namespace v8;
 using namespace node;
 
 NAN_METHOD(PosixFadvise) {
+#ifdef __OSX__
+    // No equivalent on MACOSX
+    info.GetReturnValue().Set(0);
+#else
     Nan::HandleScope scope;
 
     Local<Object> buf;
@@ -40,6 +44,7 @@ NAN_METHOD(PosixFadvise) {
     }
 
     info.GetReturnValue().Set(res);
+#endif
 }
 
 void InitAll(Local<Object> exports) {
