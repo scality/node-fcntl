@@ -14,6 +14,7 @@ NAN_METHOD(PosixFadvise) {
 
     Local<Object> buf;
     int length = info.Length();
+    Local<Context> context = info.GetIsolate()->GetCurrentContext();
 
     assert(length == 4);
 
@@ -33,10 +34,10 @@ NAN_METHOD(PosixFadvise) {
       Nan::ThrowTypeError("Argument 1 Must be an Integer");
     }
 
-    int fd = info[0]->Int32Value();
-    off_t offset = (off_t) info[1]->NumberValue();
-    off_t len = (off_t) info[2]->NumberValue();
-    unsigned long advice = info[3]->IntegerValue();
+    int fd = info[0]->Int32Value(context).FromJust();
+    off_t offset = (off_t) info[1]->NumberValue(context).FromJust();
+    off_t len = (off_t) info[2]->NumberValue(context).FromJust();
+    unsigned long advice = info[3]->IntegerValue(context).FromJust();
 
     int res = posix_fadvise(fd, offset, len, advice);
     if (res < 0) {
