@@ -2,7 +2,7 @@
   "name": "fcntl",
   "version": "0.2.0",
   "engines": {
-    "node": ">=12"
+    "node": ">10"
   },
   "description": "fcntl wrapper for nodejs",
   "main": "index.js",
