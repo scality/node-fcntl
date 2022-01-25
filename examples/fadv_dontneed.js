@@ -7,6 +7,10 @@ fs.open('foo', 'w+', function(err, fd) {
     }
 
     ret = posixFadvise(fd, 0, 10, 4);
-    console.log('posixFadvise ret: ' + ret);
-    fs.close(fd);
+    console.log('posixFadvise ret:', ret);
+    fs.close(fd, err => {
+        if (err) {
+            throw err;
+        }
+    });
 });
