@@ -10,6 +10,7 @@ NAN_METHOD(PosixFadvise) {
     // No equivalent on MACOSX
     info.GetReturnValue().Set(0);
 #elif _WIN32
+    // Skip on Windows
     info.GetReturnValue().Set(0);
 #else
     Nan::HandleScope scope;
