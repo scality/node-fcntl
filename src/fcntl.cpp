@@ -6,7 +6,7 @@ using namespace v8;
 using namespace node;
 
 NAN_METHOD(PosixFadvise) {
-#ifdef __APPLE__
+#ifdef __APPLE__ || _WIN32 || _WIN64
     // No equivalent on MACOSX
     info.GetReturnValue().Set(0);
 #else
