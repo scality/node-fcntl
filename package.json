@@ -2,7 +2,7 @@
   "name": "fcntl",
   "version": "0.2.1",
   "engines": {
-    "node": ">=10"
+    "node": ">=22"
   },
   "description": "fcntl wrapper for nodejs",
   "main": "index.js",
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/scality/node-fcntl#readme",
   "dependencies": {
     "bindings": "^1.1.1",
-    "nan": "^2.3.2",
-    "node-gyp": "^8.0.0"
+    "node-addon-api": "^8.3.0",
+    "node-gyp": "^11.1.0"
   }
 }
