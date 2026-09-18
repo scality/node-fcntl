@@ -1,11 +1,19 @@
 {
-  "name": "fcntl",
-  "version": "0.3.1",
+  "name": "@scality/fcntl",
+  "version": "0.3.2",
   "engines": {
     "node": ">=22"
   },
   "description": "fcntl wrapper for nodejs",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "binding.gyp",
+    "src/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "install": "node-gyp rebuild",
     "test": "node test/smoke.js"
