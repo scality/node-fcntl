@@ -3,7 +3,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const posixFadvise = require('../');
+const posixFadvise = require(process.env.FCNTL_MODULE || '../');
 
 const POSIX_FADV_DONTNEED = 4;
 
